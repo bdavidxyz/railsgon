@@ -13,5 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require vue
+//= require lodash
 //= require jquery
 //= require_tree .

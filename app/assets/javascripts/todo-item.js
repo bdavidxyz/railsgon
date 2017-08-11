@@ -1,18 +1,13 @@
 // See https://vuejs.org/v2/guide/components.html#One-Way-Data-Flow
-Vue.component('todo-item', {
+var TodoItem = Vue.component('todo-item', {
   props: ['todo'],
-  template: '<div>' +
-              '<li>{{ text }}</li>' +
+  template: '<div class="todo-item">' +
+              '<li>{{ todo.text }}</li>' +
               '<button v-on:click="reverseMessage">Reverse Message</button>' +
             '</div>',
   methods: {
     reverseMessage: function () {
-      this.text = this.text.split('').reverse().join('');
+      this.todo.text = this.todo.text.split('').reverse().join('');
     }
-  },
-  data: function() {
-    return {
-      text: this.todo.text,
-    };
   }
 });

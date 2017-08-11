@@ -6,13 +6,15 @@ class WelcomeController < ApplicationController
     @all_articles = Article.all
     @first_comments = @all_articles.first.comments
     @first_article = Article.first
-    # name_to_code = countries.map{ |c| [c.name,c.code] }.to_h
 
 
 
-    # p '@first_comments are ' + @first_comments.inspect 
-    # gon.your_int = @first_article.comments.count
     gon.your_obj = @first_article.as_json(:include => [:comments])
+    gon.comments = Comment.all
+
+    # gon.your_int = @first_article.comments.count
+    # p '@first_comments are ' + @first_comments.inspect 
+    # name_to_code = countries.map{ |c| [c.name,c.code] }.to_h
     # gon.your_list = @first_comments
     # gon.your_other_int = 345 + gon.your_int
     # gon.your_array = @your_array
