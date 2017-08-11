@@ -5,12 +5,14 @@
 describe("TodoItem", function() {
 
   var sut;
+  var message = {text:'word'}
+
 
   beforeEach(function() {
     var Constructor = Vue.extend(TodoItem);
     sut = new Constructor({
       propsData: {
-        todo: {text:'word'}
+        todo: message
       }
     }).$mount();
   });
@@ -25,5 +27,24 @@ describe("TodoItem", function() {
 
   it("Should render the given word", function() {
     expect($(sut.$el).find('li').text()).toEqual('word');
+  });
+
+  it("Should be able to reverse the given word", function(done) {
+    // Given
+    expect(sut.todo.text).toEqual('word');
+    expect($(sut.$el).find('li').text()).toEqual('word');
+
+    //When
+    sut.reverseMessage();
+
+    // Then
+    expect(sut.todo.text).toEqual('drow');
+    
+    // read https://vuejs.org/v2/guide/unit-testing.html#Asserting-Asynchronous-Updates
+    Vue.nextTick(function() {
+      expect($(sut.$el).find('li').text()).toEqual('drow');
+      done();
+    });
+
   });
 });
