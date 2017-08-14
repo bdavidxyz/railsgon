@@ -7,12 +7,18 @@ describe("TodoItem", function() {
   var sut;
   var message = {text:'word'}
 
-
   beforeEach(function() {
+
     var Constructor = Vue.extend(TodoItem);
     sut = new Constructor({
       propsData: {
-        todo: message
+        todo: message,
+      },
+      data: {display_light : 'blabladisplay'} ,
+      methods: {
+        toggleLight: function () {
+          this.display_light = 'toggled'
+        }
       }
     }).$mount();
   });
