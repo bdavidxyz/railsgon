@@ -13,7 +13,7 @@ _.mixin({
     return true;
   },
   isArrayEqual: function (obj) {
-    if (!(_.isArray(arr1) && _.isArray(arr2))) {
+    if !(_.isArray(arr1) && _.isArray(arr2)) {
       return false;
     } else {
       return _.isEqual(_.sort(arr1), _.sort(arr2));
