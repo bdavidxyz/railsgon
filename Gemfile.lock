@@ -113,6 +113,10 @@ GEM
       ruby_dep (~> 1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
+    magic_lamp (1.8.1)
+      method_source
+      rails (>= 4.0.0)
+      rake
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
@@ -220,12 +224,14 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  autoprefixer-rails
   byebug
   capybara (~> 2.13)
   coffee-rails
   gon
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  magic_lamp
   puma (~> 3.7)
   rails (~> 5.1.2)
   sass-rails (~> 5.0)

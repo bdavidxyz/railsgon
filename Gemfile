@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'gon'
 gem 'administrate'
+gem 'autoprefixer-rails'
 
 group :test do
   gem 'coffee-rails'
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem "teaspoon-jasmine"
+  gem "magic_lamp"
 end
 
 group :development do

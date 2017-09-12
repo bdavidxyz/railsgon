@@ -9,15 +9,17 @@ describe("TodoItem", function() {
 
   beforeEach(function() {
 
+    MagicLamp.load('shared/c-todo-item');
+
     var Constructor = Vue.extend(TodoItem);
     sut = new Constructor({
       propsData: {
         todo: message,
       },
-      data: {display_light : 'blabladisplay'} ,
+      data: {called_toggled_light : false},
       methods: {
         toggleLight: function () {
-          this.display_light = 'toggled'
+          this.called_toggled_light = true;
         }
       }
     }).$mount();
@@ -35,16 +37,18 @@ describe("TodoItem", function() {
     expect($(sut.$el).find('li').text()).toEqual('word');
   });
 
-  it("Should be able to reverse the given word", function(done) {
+  it("Should be able to reverse the given word, and toggle light", function(done) {
     // Given
     expect(sut.todo.text).toEqual('word');
     expect($(sut.$el).find('li').text()).toEqual('word');
+    expect(sut.called_toggled_light).toEqual(false);
 
     //When
     sut.reverseMessage();
 
     // Then
     expect(sut.todo.text).toEqual('drow');
+    expect(sut.called_toggled_light).toEqual(true);
     
     // read https://vuejs.org/v2/guide/unit-testing.html#Asserting-Asynchronous-Updates
     Vue.nextTick(function() {

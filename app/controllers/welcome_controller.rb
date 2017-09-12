@@ -9,9 +9,9 @@ class WelcomeController < ApplicationController
 
 
 
-    gon.your_obj = @first_article.as_json(:include => [:comments])
-    gon.comments = Comment.all
-    gon.blabla = 'blabla'
+    # gon.your_obj = @first_article.as_json(:include => [:comments])
+    # gon.comments = Comment.all
+    # gon.blabla = 'blabla'
     gon.grocery_list = [{'id' => 0, 'text' => 'Vegetables'}, {'id' => 1, 'text' => 'Cheese'}, {'id' => 2, 'text' => 'Whatever'}, ]
     gon.display_light = false;
     # gon.your_int = @first_article.comments.count

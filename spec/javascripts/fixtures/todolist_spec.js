@@ -16,6 +16,7 @@ describe("TodoList", function() {
     }).$mount();
     expect(comp).toBeDefined();
     expect(comp.$el).toBeDefined();
+    
     expect($(comp.$el).length).toEqual(1);
     expect($(comp.$el).find( ".todo-item" ).length).toEqual(2);
   });

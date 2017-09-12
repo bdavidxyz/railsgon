@@ -3,16 +3,12 @@ var TodoItem = Vue.component('todo-item', {
   
   props: ['todo'],
   
-  template: '<div class="todo-item">' +
-              '<li>{{ todo.text }}</li>' +
-              '<button v-on:click="reverseMessage">Reverse Message</button>' +
-            '</div>',
+  template: '#c-todo-item',
   
   methods: {
     reverseMessage: function () {
       this.todo.text = this.todo.text.split('').reverse().join('');
       this.$root.toggleLight();
-      console.log(this.$root.display_light);
     }
   }
   

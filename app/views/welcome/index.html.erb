@@ -1,23 +1,10 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-
 <div id="app-7">
   <ol>
-    <!--
-      Now we provide each todo-item with the todo object
-      it's representing, so that its content can be dynamic.
-      We also need to provide each component with a "key",
-      which will be explained later.
-    -->
-<!--     <todo-item
-      v-for="item in groceryList"
-      v-bind:todo="item"
-      v-bind:key="item.id">
-    </todo-item> -->
     <todo-list 
-      v-bind:eee="grocery_list">
-        
+      v-bind:eee="grocery_list">        
     </todo-list>
   </ol>
+
+  <todo-light v-bind:ison="display_light" />
 </div>
   
