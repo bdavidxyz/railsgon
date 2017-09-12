@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   mount MagicLamp::Genie, at: "/magic_lamp" if defined?(MagicLamp)
 
   namespace :admin do
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   end
  
   get 'welcome/index'
+  get 'other/index'
+
   root 'welcome#index'
 
 end

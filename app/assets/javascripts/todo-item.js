@@ -7,6 +7,7 @@ var TodoItem = Vue.component('todo-item', {
   
   methods: {
     reverseMessage: function () {
+      console.log('item clicked at ' + new Date());
       this.todo.text = this.todo.text.split('').reverse().join('');
       this.$root.toggleLight();
     }

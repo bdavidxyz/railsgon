@@ -1,10 +1,41 @@
 <div id="app-7">
   <ol>
     <todo-list 
-      v-bind:eee="grocery_list">        
-    </todo-list>
-  </ol>
+    v-bind:eee="grocery_list">        
+  </todo-list>
+</ol>
 
-  <todo-light v-bind:ison="display_light" />
+<todo-light v-bind:ison="display_light" />
 </div>
-  
+
+<%= link_to "Go to Other", other_index_path %> 
+
+<% content_for :javascript do %> 
+<script type="text/javascript">
+  console.log('insideWelcome ' + new Date());
+  var the_grocery_list = <%= raw @grocery_list.to_json %>;
+//   $(document).on('turbolinks:load', function() {
+//    console.log('turbolinks loaded at ' + new Date());
+//    if ($('#app-7').length) {
+
+//     var vm = new Vue({
+//       el: '#app-7',
+//       data: function() {
+//         return {
+//           grocery_list: <%= raw @grocery_list.to_json %>,
+//           display_light: <%= raw @display_light.to_json %>
+//         }
+//       },
+//       // mixins: [TurbolinksAdapter],
+//       methods: {
+//         toggleLight: function () {
+//           this.display_light = !this.display_light;
+//         }
+//       }
+//     });
+//   }
+
+// });
+
+</script>
+<% end %>
